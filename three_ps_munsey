@@ -1,3 +1,42 @@
+Monday 2/9/2026
+
+Progress:
+I set up a new PostgreSQL database dedicated to the project, created the initial schema for housing listings and data ingestion, and established a clean project folder structure with version control. I also began outlining the ingestion pipeline in Python and identified which data sources are realistic and sustainable to work with in an initial MVP. In parallel, I coordinated with my client and rescheduled our first project meeting, aligning expectations around the current build stage.
+
+Problems:
+At this stage, the primary challenge is balancing ambition with feasibility. Some of the largest housing platforms present technical and policy limitations, so I need to be thoughtful about which sources to include early on while still delivering meaningful value in the demo.
+
+Plans:
+My focus for the coming week is to build a live proof of concept that pulls rental listings from at least one viable source and writes them into the database. I plan to demonstrate this workflow to the client during our Friday meeting. I will also continue refining the ingestion logic, document assumptions and constraints for each data source, and begin thinking through simple filtering rules for identifying duplicate or suspicious listings.
+
+Hours: 4
+
+Monday 2/2/2026
+
+Progress:
+I met with my client and talked through different options and directions for the project. That conversation helped narrow the focus to something that is both realistic and useful. I also created an initial data schema to map out what fields I expect to work with and how the data might be structured once collected and cleaned. In addition, I have continued reaching out to others connected to the data side of this topic to better understand what sources may be available and what limitations I might face.
+
+Problems:
+I still need to work on the flow chart of how I am going to scrap the data and clean it.  Keeping it sustainable is the main goal as of now.   
+
+Plans:
+My goal this week is to gather all my sources for the data and pull all successfully while running some steps on cleaning.  I would also like to research and find out a good way to look for scam postings and flush them out.  I will meet on Friday with my client again to show what I have come up with during the week. 
+
+Hours: 2
+
+Monday 1/26/26
+
+Progress:
+I met with John Chandler and discussed different options and directions for my project. The conversation helped clarify what might be realistic and valuable to focus on. I have also continued reaching out to people connected to the data side of this topic so I can better define the scope of the project.
+
+Problems:
+I still need to meet with Andrew and Sam to get a clearer understanding of what data will actually be available for me to use. Until I confirm that, it is a little difficult to fully lock in the direction and technical plan for the project.
+
+Plans:
+My goal this week is to meet with Andrew and Sam, secure access to the data I will be using, and begin the data cleaning process. Once I understand the structure and quality of the data, I will start outlining the analysis and project workflow.
+
+Hours:2
+
 Monday 1/19/26
 
 Progress:
