@@ -1,3 +1,19 @@
+Monday 2/16/26
+
+Progress:
+I met with Kristian and reviewed potential feature additions as well as areas where we should simplify the scope. That discussion helped tighten the focus of the MVP and clarify what actually delivers value versus 
+what may be unnecessary at this stage. On the technical side, I created a new subpoena database and successfully built and ran an ETL process to load data into it.
+
+Problems:
+The main challenge right now is scraping Craigslist and Facebook Marketplace in a reliable and sustainable way. Both platforms present structural and policy limitations that make automation difficult. 
+I have invested about four hours into testing different approaches, but the process is still not stable enough for production use. Balancing completeness of sources with long term maintainability continues to be a concern.
+
+Plans:
+My focus this week is to continue working toward successfully scraping all targeted sources and integrating them into a consistent ingestion pipeline. I want to stabilize the scraping logic, improve error handling,
+and ensure the ETL process can handle multiple inputs cleanly. Once the sources are consistently loading, I will shift attention toward cleaning rules and standardizing fields across platforms.
+
+Hours: 4
+
 Monday 2/9/2026
 
 Progress:
