@@ -1,3 +1,22 @@
+Monday 2/23/26
+
+Progress:
+This week I was able to successfully pull in rental listings from Missoula Property Management and get them loading consistently into the database. I also improved the logic for dynamically pulling the current MHA 
+Vacancy Board PDF and parsing the contents more reliably. In addition, I started building a preliminary dashboard to visualize what the data might look like once centralized. This helped me see early design decisions 
+and identify gaps in the data structure. The dashboard is still very early stage, but it gave me a clearer picture of what fields need to be standardized before scaling.
+
+Problems:
+The main challenge right now is ensuring I can gather data from all intended sources before fully committing to cleaning logic. I currently have two sources integrated, but I expect to expand to four or five. Pulling 
+the data reliably is still the biggest hurdle, especially with platforms that are less scraper friendly. Another challenge is normalization. Each source formats availability, rent, and unit information differently, so 
+creating a consistent schema that works across all platforms is more complex than expected.
+
+Plans:
+My focus this week is to stabilize the ingestion pipeline and begin introducing a staging layer for cleaning and normalization. I want to define a standardized schema for listings and start refining bedroom parsing, 
+rent extraction, and availability status logic. Once the backend structure is more stable and consistent across sources, I will revisit the dashboard and refine the presentation layer with cleaner, more reliable data.
+
+Hours:
+4
+
 Monday 2/16/26
 
 Progress:
