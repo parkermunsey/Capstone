@@ -1,3 +1,19 @@
+Monday 3/2/26
+
+Progress:
+This week I expanded the ingestion pipeline by successfully integrating Caras and Plum Property Management into the Raw to Staging architecture, bringing the total to four structured sources. Both now follow the append only raw ingestion pattern and normalized upsert into stg_listings. I resolved a SQLAlchemy JSON casting issue and improved the Caras parsing logic so listing_title now correctly captures the property address instead of rent.
+
+I also prepared SQL demo queries to show multi source counts, normalized listings, and potential dashboard filters such as rent sliders and availability toggles. Additionally, I contacted Sam Hilliard to ask her to serve as my prospective client for the project.
+
+Problems:
+The main challenge was handling inconsistent HTML structures across sources. Caras included multiple header elements, which initially caused rent to be captured as the title. Plum required more flexible link extraction logic. Normalizing different formats for rent and availability continues to be complex. I am also beginning to think more seriously about address standardization for future duplicate detection.
+
+Plans:
+Next week I plan to stabilize address extraction and consider promoting address to a standardized staging field to support deduplication. I will also add one more local property management source before shifting focus back to refining the dashboard and presentation layer. I will follow up with Sam Hilliard regarding client feedback and presentation scheduling.
+
+Hours:
+4
+
 Monday 2/23/26
 
 Progress:
