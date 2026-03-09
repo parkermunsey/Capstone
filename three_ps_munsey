@@ -1,3 +1,24 @@
+Monday 3/9/26
+
+Progress:
+This week I continued expanding and stabilizing the ingestion pipeline for the housing aggregator. The Caras and Plum sources are now running consistently through the Raw to Staging architecture, and I spent 
+additional time refining the normalization logic so fields like bedrooms, rent, and availability are handled more consistently across sources. I also reviewed several potential dashboard ideas and started thinking 
+more about what metrics or filters would be most useful to show once the data is centralized. In addition, I scheduled a meeting with Matt Erickson from the City of Missoula IT department to discuss possible dashboard 
+designs and how the city might want to view or interact with the data.
+
+Problems:
+The main challenge continues to be scraping Craigslist in a reliable and sustainable way. The structure of the site and its scraping protections make it difficult to consistently pull listings without running into 
+blocking or incomplete data. Because of that, I am still experimenting with different approaches to see what might work best without creating a fragile pipeline. Normalizing data across sources also remains somewhat 
+complex since each platform formats rent, availability, and unit details differently.
+
+Plans:
+Next week I plan to continue experimenting with ways to responsibly pull Craigslist listings or determine whether it should remain outside the core ingestion pipeline for now. I will also meet with Matt Erickson to 
+discuss potential dashboard structures and what types of views might be useful from the city's perspective. In parallel, I want to continue refining the staging layer and begin focusing more on what the final dashboard 
+presentation will look like once the core data sources are stable.
+
+Hours:
+3
+
 Monday 3/2/26
 
 Progress:
