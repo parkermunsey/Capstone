@@ -1,3 +1,20 @@
+Monday 3/16/26
+
+Progress:
+This week I continued maintaining and monitoring the ingestion pipeline to make sure the sources that are currently integrated are running consistently through the Raw to Staging architecture. I also spent some time 
+reviewing possible dashboard directions and thinking about what the final presentation layer might look like once the data sources are fully stabilized.
+
+Problems:
+The main challenge continues to be reliably scraping Craigslist. The site structure and scraping protections make it difficult to consistently gather listings without running into blocking or incomplete results. Because 
+of that, I am still testing different approaches to determine whether it can realistically remain part of the pipeline.
+
+Plans:
+This week I will meet with Matt Erickson, the IT lead for the City of Missoula, on Tuesday to discuss best practices for the code handoff and to decide which dashboard platform will work best for everyone involved in the 
+project. I will also continue refining the pipeline and evaluating the stability of the remaining data sources.
+
+Hours:
+4
+
 Monday 3/9/26
 
 Progress:
