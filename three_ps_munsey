@@ -1,3 +1,20 @@
+Monday 3/23/26
+
+Progress:
+This week I started shifting more focus toward the dashboard by testing initial designs and thinking through how the data should be presented to a user. I also continued working on normalizing listings in the 
+staging layer, improving consistency across sources so fields like rent, bedrooms, and availability align better for visualization.
+
+Problems:
+The main issue this week was duplicate listings showing up in the dashboard, which is tied to address standardization and deduplication logic still needing refinement. I also spent time evaluating different 
+dashboard tools and layouts, and I am still working toward identifying the best fit for the project from both a usability and presentation standpoint.
+
+Plans:
+Next week I plan to refine the deduplication logic, likely focusing on address matching and unique listing identifiers to clean up the dashboard view. I will also continue iterating on dashboard designs and align 
+more closely with the direction discussed with Matt to make sure the final product is both usable and presentable.
+
+Hours:
+3
+
 Monday 3/16/26
 
 Progress:
