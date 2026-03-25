@@ -2,7 +2,7 @@
 <h3 align="center">Missoula, Montana</h3>
 
 <p align="center">
-  <img src="media_art/housing_logo.jpg" alt="Housing Logo" width="200"/>
+  <img src="housing_logo.jpg" alt="Housing Logo" width="200"/>
 </p>
 
 <p align="center">
