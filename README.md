@@ -1,101 +1,141 @@
-# Affordable Housing Aggregator for Missoula, Montana
-
-## Overview
-Missoula has a limited and fragmented rental housing market, especially for affordable one-bedroom units. Listings are spread across multiple property management websites, PDFs, and independent platforms, making it difficult for renters or housing organizations to see what is actually available at any given time.
-
-This project builds a centralized data pipeline and dashboard that aggregates rental listings from multiple sources into one place. The goal is to provide a clear, real-time view of available housing options in Missoula.
+# Affordable Housing Aggregator  
+### Missoula, Montana  
+**Project by Parker Munsey | University of Montana MSBA Capstone**
 
 ---
 
-## Why this project matters
-Right now, finding housing in Missoula often means checking multiple websites, PDFs, and listings manually. This is time consuming and makes it difficult for individuals and organizations to understand what is truly available.
+## Project Overview
 
-This project simplifies that process by bringing everything into one place. It is designed to support renters, housing advocates, and local organizations by making housing data easier to access and understand.
+Missoula has a limited and fragmented rental housing market, especially for affordable one-bedroom units. Rental listings are spread across multiple property management websites, PDFs, and independent platforms, making it difficult to understand what housing is actually available at any given time.
 
----
-
-## Current data sources
-- Missoula Property Management
-- Missoula Housing Authority (Vacancy PDF)
-- Caras Property Management
-- Plum Property Management
-- Craigslist (planned)
-- Adea Property Management 
----
-
-## System architecture
-Raw → Staging → Views → Dashboard
-
-- Raw layer stores original scraped data  
-- Staging layer standardizes and cleans data  
-- Views provide query-ready datasets  
-- Dashboard presents the final results to users  
+This project builds a centralized data pipeline and dashboard that aggregates rental listings from multiple sources into a single, queryable system. The goal is to provide a clear and up-to-date view of available housing options for renters, housing organizations, and local stakeholders.
 
 ---
 
-## Repository structure
-- scripts/ – Python ETL pipelines for each data source  
-- sql/ – SQL queries, views, and analysis  
-- data/ – Sample outputs and example data  
-- docs/ – Project documentation and diagrams  
-- archive/ – Older or unused code  
+## Why This Project Matters
+
+Currently, finding housing in Missoula requires manually checking multiple websites and documents. This process is time-consuming and often incomplete.
+
+This project addresses that problem by:
+
+- Centralizing rental listings across multiple sources  
+- Standardizing inconsistent data into a unified format  
+- Enabling real-time visibility into housing availability  
+
+The result is a system that improves accessibility, transparency, and decision-making around housing.
 
 ---
 
-## Tech stack
+## Data Sources
+
+The pipeline currently integrates data from multiple sources:
+
+- Missoula Property Management  
+- Missoula Housing Authority (Vacancy PDF)  
+- Caras Property Management  
+- Plum Property Management  
+- ADEA Property Management  
+- Craigslist 
+
+Each source has a different structure and level of data quality, requiring custom ingestion and normalization logic.
+
+---
+
+## System Architecture
+
+The project follows a structured data engineering workflow:
+
+**Raw → Staging → Views → Dashboard**
+
+- **Raw Layer**  
+  Stores append-only scraped data exactly as collected from each source  
+
+- **Staging Layer**  
+  Cleans and standardizes data into a consistent schema across all sources  
+
+- **Views Layer**  
+  Provides query-ready datasets for analysis and visualization  
+
+- **Dashboard Layer**  
+  Presents filtered and aggregated housing data to end users  
+
+This modular design allows for scalable ingestion and easier debugging across sources.
+
+---
+
+## Data Pipeline
+
+The system uses Python-based ETL pipelines to ingest and transform data:
+
+- Each source has a dedicated ingestion script  
+- Data is stored in a centralized PostgreSQL database (Supabase)  
+- A shared normalization script standardizes all sources into a single staging table  
+- Data is prepared for downstream analytics and dashboarding  
+
+This approach ensures consistency while allowing flexibility for source-specific parsing.
+
+---
+
+## Repository Structure
+
+scripts/
+ingestion/ # Source-specific ETL pipelines
+staging/ # Shared normalization logic
+
+sql/
+views/ # Query-ready datasets
+analysis/ # Exploration and validation queries
+
+data/ # Sample outputs and test data
+docs/ # Diagrams and documentation
+archive/ # Deprecated or experimental code
+
+
+---
+
+## Technologies Used
+
+**Data Processing**
 - Python  
-- PostgreSQL (Supabase)  
-- SQLAlchemy (engine + text, no ORM)  
 - BeautifulSoup (HTML parsing)  
 - pdfplumber (PDF parsing)  
-- python-dotenv (environment variables)  
+- SQLAlchemy (database interaction)  
+
+**Database**
+- PostgreSQL (Supabase)
+
+**Development Tools**
+- python-dotenv (environment management)  
+- Git / GitHub  
+
+**Visualization (Planned)**
+- Looker Studio or Python-based dashboard (Dash / Streamlit)
 
 ---
 
-## How to run
+## How It Works
 
-1. Clone the repository  
-2. Create a virtual environment  
-   ```python
-   python -m venv venv
-   ```
-3. Activate the environment  
-   ```python
-   venv\Scripts\activate
-   ```
-4. Install dependencies  
-   ```python
-   pip install -r requirements.txt
-   ```
-5. Set environment variables in a `.env` file  
-   ```python
-   DATABASE_URL=your_connection_string
-   ```
-6. Run database setup scripts  
-7. Run ingestion scripts inside `scripts/ingestion/`  
-8. Run SQL queries in `sql/analysis/` to view results  
- 
+1. Scrape rental listings from multiple sources  
+2. Store raw data in `raw_listings` (append-only)  
+3. Normalize data into `stg_listings` using shared logic  
+4. Create views for filtering and aggregation  
+5. Build a dashboard for end-user interaction  
 
 ---
 
-## Project status
+## Project Status
 
-### Current
-- Multiple sources integrated into a single normalized table  
-- Raw to Staging pipeline implemented  
-- Data is queryable across all sources  
-- Demo queries available for dashboard use  
+### Current Progress
 
-### Next steps
-- Improve address extraction and standardization  
-- Implement deduplication logic  
-- Add additional data sources  
-- Integrate Craigslist  
-- Build final dashboard (likely Looker Studio)  
+- Multiple sources successfully integrated  
+- Raw → Staging pipeline implemented  
+- Data standardized into a shared schema  
+- Cross-source querying enabled  
 
 ---
 
 ## Author
-Parker Munsey  
+
+**Parker Munsey**  
 University of Montana  
-MSBA Capstone Project
+Master of Science in Business Analytics (MSBA)  
