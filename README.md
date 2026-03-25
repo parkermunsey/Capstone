@@ -1,8 +1,18 @@
-# Affordable Housing Aggregator  
-### Missoula, Montana  
-**Project by Parker Munsey | University of Montana MSBA Capstone**
+<h1 align="center">Affordable Housing Aggregator</h1>
+<h3 align="center">Missoula, Montana</h3>
 
----
+<p align="center">
+  <img src="media_art/housing_logo.jpg" alt="Housing Logo" width="200"/>
+</p>
+
+<p align="center">
+  <em>
+    Project by Parker Munsey<br>
+    University of Montana MSBA Capstone
+  </em>
+</p>
+
+<hr>
 
 ## Project Overview
 
