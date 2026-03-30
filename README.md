@@ -85,6 +85,23 @@ The system uses Python-based ETL pipelines to ingest and transform data:
 This approach ensures consistency while allowing flexibility for source-specific parsing.
 
 ---
+## How to Run
+
+### 1. Install dependencies
+pip install -r requirements.txt
+
+### 2. Add environment variables
+Create a `.env` file with:
+DATABASE_URL=your_database_url_here
+
+### 3. Run ingestion
+python scripts/ingestion/run_all_ingestion.py
+
+### 4. Normalize into staging
+python scripts/staging/normalize_raw_to_stg.py --source all --lookback-days 14
+
+### 5. Launch dashboard
+streamlit run scripts/dashboard/app.py
 
 ## Repository Structure
 
