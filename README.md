@@ -2,7 +2,7 @@
 <h3 align="center">Missoula, Montana</h3>
 
 <p align="center">
-  <img src="housing_logo.jpg" alt="Housing Logo" width="200"/>
+  <img src="docs/housing_logo.jpg" alt="Housing Logo" width="200"/>
 </p>
 
 <p align="center">
@@ -12,7 +12,7 @@
   </em>
 </p>
 
-<hr>
+---
 
 ## Project Overview
 
@@ -45,7 +45,7 @@ The pipeline currently integrates data from multiple sources:
 - Caras Property Management  
 - Plum Property Management  
 - ADEA Property Management  
-- Craigslist 
+- Craigslist  
 
 Each source has a different structure and level of data quality, requiring custom ingestion and normalization logic.
 
@@ -85,58 +85,50 @@ The system uses Python-based ETL pipelines to ingest and transform data:
 This approach ensures consistency while allowing flexibility for source-specific parsing.
 
 ---
+
 ## How to Run
 
 ### 1. Install dependencies
+```bash
 pip install -r requirements.txt
+### 2. Add environment variables  
+Create a `.env` file in the project root:
 
-### 2. Add environment variables
-Create a `.env` file with:
+```env
 DATABASE_URL=your_database_url_here
-
-### 3. Run ingestion
 python scripts/ingestion/run_all_ingestion.py
-
-### 4. Normalize into staging
 python scripts/staging/normalize_raw_to_stg.py --source all --lookback-days 14
-
-### 5. Launch dashboard
 streamlit run scripts/dashboard/app.py
 
-## Repository Structure
-
 scripts/
-ingestion/ # Source-specific ETL pipelines
-staging/ # Shared normalization logic
+├── ingestion/        # Source-specific ETL pipelines
+├── staging/          # Shared normalization logic
+├── database/         # Table + view creation scripts
+├── dashboard/        # Streamlit dashboard app
 
-sql/
-views/ # Query-ready datasets
-analysis/ # Exploration and validation queries
-
-data/ # Sample outputs and test data
-docs/ # Diagrams and documentation
-archive/ # Deprecated or experimental code
-
-
----
+docs/                 # Images, diagrams, documentation
+sql/                  # Views and analysis queries
+archive/              # Deprecated or experimental code
+data/                 # Sample outputs (optional)
 
 ## Technologies Used
 
-**Data Processing**
+### Data Processing
 - Python  
 - BeautifulSoup (HTML parsing)  
 - pdfplumber (PDF parsing)  
 - SQLAlchemy (database interaction)  
 
-**Database**
+### Database
 - PostgreSQL (Supabase)
 
-**Development Tools**
+### Development Tools
 - python-dotenv (environment management)  
 - Git / GitHub  
 
-**Visualization (Planned)**
-- Looker Studio or Python-based dashboard (Dash / Streamlit)
+### Visualization
+- Streamlit (current dashboard)  
+- Looker Studio (planned)
 
 ---
 
@@ -146,18 +138,24 @@ archive/ # Deprecated or experimental code
 2. Store raw data in `raw_listings` (append-only)  
 3. Normalize data into `stg_listings` using shared logic  
 4. Create views for filtering and aggregation  
-5. Build a dashboard for end-user interaction  
+5. Serve data through an interactive dashboard  
 
 ---
 
 ## Project Status
 
 ### Current Progress
-
 - Multiple sources successfully integrated  
 - Raw → Staging pipeline implemented  
 - Data standardized into a shared schema  
 - Cross-source querying enabled  
+- Dashboard prototype developed  
+
+### Next Steps
+- Improve cross-source deduplication  
+- Expand data coverage across additional sources  
+- Enhance dashboard features and usability  
+- Prepare system for long-term automation and handoff  
 
 ---
 
@@ -165,4 +163,4 @@ archive/ # Deprecated or experimental code
 
 **Parker Munsey**  
 University of Montana  
-Master of Science in Business Analytics (MSBA)  
+Master of Science in Business Analytics (MSBA)
