@@ -38,6 +38,8 @@ This project builds a centralized data pipeline and dashboard that aggregates re
 
 - **[README.md](README.md)**: Project overview, setup instructions, and documentation.
 
+- **[three_ps_munsey](three_ps_munsey)**: Provides progress, problems, and plans updates on the project.
+
 ---
 
 ## Why This Project Matters
