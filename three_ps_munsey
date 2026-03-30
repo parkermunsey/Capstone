@@ -1,3 +1,23 @@
+Monday 3/30/26
+
+Progress:
+This week I shifted focus more heavily toward the dashboard and was able to design an initial version that displays the aggregated rental listings in a clear and usable format. This helped validate how the data from 
+the pipeline flows into a final presentation layer and gave me a better sense of what fields and filters are most important to users. I also continued working on the staging layer and normalization logic to improve 
+consistency across sources.
+
+Problems:
+The main issue this week is duplicate listings appearing in the dashboard, which is tied to cross-source matching and deduplication logic still needing refinement. Address standardization and fingerprinting are not 
+yet fully reliable across all sources. I am also still having difficulty reliably scraping Craigslist, as its structure and protections make it inconsistent to pull data in a stable way. In addition, some filtering 
+behavior in the dashboard still needs improvement to ensure it reflects clean and accurate data.
+
+Plans:
+This week I plan to focus on improving the normalization script, with a specific emphasis on refining deduplication and addressing inconsistencies in Craigslist data. I will continue testing and stabilizing the 
+Craigslist ingestion process to determine whether it can be reliably included in the pipeline. I also plan to review the initial dashboard design with the client to gather feedback and make adjustments based on their
+needs and expectations.
+
+Hours:
+10
+
 Monday 3/23/26
 
 Progress:
