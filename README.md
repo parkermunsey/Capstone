@@ -22,6 +22,24 @@ This project builds a centralized data pipeline and dashboard that aggregates re
 
 ---
 
+## Repository Structure
+
+- **[scripts/ingestion](scripts/ingestion/)**: Source-specific ETL pipelines that scrape and collect rental listing data from each provider.
+
+- **[scripts/staging](scripts/staging/)**: Shared normalization logic that transforms raw data into a clean, standardized schema across all sources.
+
+- **[scripts/database](scripts/database/)**: SQL and Python scripts for creating tables, schemas, and views used in the pipeline.
+
+- **[scripts/dashboard](scripts/dashboard/)**: Streamlit dashboard application for exploring rental listings.
+
+- **[docs](docs/)**: Project assets including images, diagrams, and documentation.
+
+- **[deliverables](deliverables/)**: Final project outputs including reports and submission materials.
+
+- **[README.md](README.md)**: Project overview, setup instructions, and documentation.
+
+---
+
 ## Why This Project Matters
 
 Currently, finding housing in Missoula requires manually checking multiple websites and documents. This process is time-consuming and often incomplete.
@@ -109,7 +127,11 @@ streamlit run scripts/dashboard/app.py
 ```
 
 ---
+## Dashboard Preview
 
+Below is a preview of the rental housing dashboard built for this project:
+
+![Missoula Rental Dashboard](docs/dashboard.png)
 ## Technologies Used
 
 ### Data Processing
