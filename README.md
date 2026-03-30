@@ -91,25 +91,24 @@ This approach ensures consistency while allowing flexibility for source-specific
 ### 1. Install dependencies
 ```bash
 pip install -r requirements.txt
-### 2. Add environment variables  
-Create a `.env` file in the project root:
+```
 
-```env
-DATABASE_URL=your_database_url_here
+### 2. Run ingestion
+```bash
 python scripts/ingestion/run_all_ingestion.py
+```
+
+### 3. Normalize into staging
+```bash
 python scripts/staging/normalize_raw_to_stg.py --source all --lookback-days 14
+```
+
+### 4. Launch dashboard
+```bash
 streamlit run scripts/dashboard/app.py
+```
 
-scripts/
-├── ingestion/        # Source-specific ETL pipelines
-├── staging/          # Shared normalization logic
-├── database/         # Table + view creation scripts
-├── dashboard/        # Streamlit dashboard app
-
-docs/                 # Images, diagrams, documentation
-sql/                  # Views and analysis queries
-archive/              # Deprecated or experimental code
-data/                 # Sample outputs (optional)
+---
 
 ## Technologies Used
 
