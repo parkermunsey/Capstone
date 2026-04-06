@@ -1,3 +1,21 @@
+Monday 4/6/26
+
+Progress:
+This week I continued improving the data pipeline by enhancing the Plum Property Management ingestion so that rent, bedrooms, and bathrooms are now consistently captured and normalized. I also made 
+progress on the deduplication process, which is now performing more reliably across sources. In addition, I improved the aggregation of Craigslist data, making it more usable within the pipeline despite its 
+inconsistencies. On the front end, I began working on refining the dashboard design to make it more intuitive and better aligned with the needs of end users.
+
+Problems:
+While improvements have been made, some duplication issues still exist due to edge cases in cross-source matching. Craigslist data continues to be somewhat inconsistent, which makes normalization and 
+reliability a challenge. On the dashboard side, design decisions are still evolving, and I need clearer direction on layout and usability to ensure it meets stakeholder expectations.
+
+Plans:
+This week I plan to continue refining the dashboard design and overall user experience. I will meet with the IT team and Kristian to gather feedback on both the dashboard layout and the long-term handoff 
+approach. Based on those discussions, I will make adjustments to better align the system with stakeholder needs and ensure the final product is both usable and maintainable.
+
+Hours:
+7
+
 Monday 3/30/26
 
 Progress:
