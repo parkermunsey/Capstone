@@ -108,25 +108,94 @@ This approach ensures consistency while allowing flexibility for source-specific
 
 ## How to Run
 
-### 1. Install dependencies
+### 1. Set up the environment (first time only)
+
+From the project root:
+
 ```bash
-pip install -r requirements.txt
+python -m venv .venv
 ```
 
-### 2. Run ingestion
+Activate the virtual environment (Windows PowerShell):
+
 ```bash
-python scripts/ingestion/run_all_ingestion.py
+.\scripts\venv\Scripts\activate
 ```
 
-### 3. Normalize into staging
+Install dependencies:
+
 ```bash
-python scripts/staging/normalize_raw_to_stg.py --source all --lookback-days 14
+pip install -r scripts/requirements.txt
 ```
 
-### 4. Launch dashboard
+---
+
+### 2. Run the full data pipeline
+
+Navigate to the `scripts` folder:
+
 ```bash
-streamlit run scripts/dashboard/app.py
+cd scripts
 ```
+
+Activate the virtual environment (if not already active):
+
+```bash
+.\venv\Scripts\activate
+```
+
+Run the full pipeline:
+
+```bash
+python run_daily_pipeline.py
+```
+
+This will automatically:
+- Run all ingestion scripts (ADEA, Caras, Craigslist, MHA, MPM, Plum)
+- Normalize raw data into staging (`stg_listings`)
+- Refresh the dashboard view (`dashboard_ready_listings`)
+
+---
+
+### 3. Launch the dashboard
+
+From the same `scripts` folder:
+
+```bash
+streamlit run dashboard_app.py
+```
+
+Then open the URL shown in the terminal (typically):
+
+```
+http://localhost:8501
+```
+
+---
+
+### Optional: Run everything with one click (Windows)
+
+```
+scripts/run_daily_pipeline.bat
+```
+
+This is the easiest option for non-technical users and is what should be scheduled for daily updates.
+
+---
+
+### Recommended Daily Workflow
+
+1. Run the pipeline (or let the scheduled task handle it)
+2. Open the dashboard in your browser
+3. Review listings and optionally flag/remove incorrect or inactive ones
+
+---
+
+### Notes
+
+- Flagging a listing does **not delete data**. It hides the listing from the dashboard using a backend moderation table (`listing_flags`).
+- The dashboard always reflects the most recent pipeline run.
+- If new data is ingested, previously flagged listings will remain hidden.
 
 ---
 ## Dashboard Preview
