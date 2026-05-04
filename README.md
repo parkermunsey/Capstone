@@ -200,11 +200,69 @@ This is the easiest option for non-technical users and is what should be schedul
 ---
 ## Dashboard Preview
 
-Below is a preview of the rental housing dashboard built for this project:
+The Missoula Rental Dashboard is the final output of this project. It provides a centralized, interactive view of rental listings aggregated from multiple housing sources across Missoula.
 
-![Missoula Rental Dashboard](docs/dashboard.png)
-## Technologies Used
+The dashboard is designed to be simple for users while being powered by a structured data pipeline behind the scenes.
 
+---
+
+### Initial Dashboard View
+
+![Dashboard Initial](docs/dash_initial.png)
+
+The main dashboard displays current rental listings after cleaning and deduplication. Key features include:
+
+- **Centralized listings** from multiple property management sources
+- **Real-time filtering** by source, bedrooms, rent, and availability
+- **Standardized listing data** (rent, beds, baths, square footage)
+- **KPI summary cards** showing listings, sources, and rent coverage
+- **Direct links** to original listing pages
+- **Flag Listing feature** to hide incorrect or inactive listings
+
+The goal of this view is to replace the need to check multiple websites by providing a single, reliable interface for exploring rental availability.
+
+---
+
+### Map View
+
+![Dashboard Map](docs/dash_map.png)
+
+The map view allows users to visualize listings geographically:
+
+- Displays listings using latitude and longitude from normalized data
+- Helps identify location patterns and neighborhood distribution
+- Supports quick exploration of where available units are located
+
+This adds spatial context to the listing data, which is not available on most individual property management sites.
+
+---
+
+### Rent Distribution View
+
+![Dashboard Rent Distribution](docs/dash_rental.png)
+
+The rent distribution view provides a simple analytical perspective:
+
+- Shows how rental prices are distributed across listings
+- Can be filtered by source to compare pricing across providers
+- Helps identify pricing ranges and outliers
+
+This view turns the dashboard from just a listing tool into a lightweight analysis tool.
+
+---
+
+### Key Feature: Flagging System
+
+One of the most important features of the dashboard is the **flagging system**.
+
+- Users can flag listings that are incorrect, inactive, or irrelevant
+- The flagged listing is immediately removed from the dashboard
+- The action is stored in a backend `listing_flags` table
+- The original data remains intact (no destructive deletes)
+
+> **Flagging does not erase data — it hides listings from the live dashboard.**
+
+This allows users to improve dashboard quality in real time without requiring developer intervention, while preserving the integrity of the data pipeline.
 ### Data Processing
 - Python  
 - BeautifulSoup (HTML parsing)  
