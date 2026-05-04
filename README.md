@@ -191,12 +191,6 @@ This is the easiest option for non-technical users and is what should be schedul
 
 ---
 
-### Notes
-
-- Flagging a listing does **not delete data**. It hides the listing from the dashboard using a backend moderation table (`listing_flags`).
-- The dashboard always reflects the most recent pipeline run.
-- If new data is ingested, previously flagged listings will remain hidden.
-
 ---
 ## Dashboard Preview
 
